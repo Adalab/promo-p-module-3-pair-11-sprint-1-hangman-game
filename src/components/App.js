@@ -3,9 +3,23 @@ import "../styles/App.scss";
 
 function App() {
   const [number, setNumber] = useState(0);
+  const [lastLetter, setLastLetter] =useState("");
   const numberOfErrors = () => {
     setNumber(number + 1);
   };
+
+  //darle una vuelta para conseguir el punto 2 del ejericio
+
+  const handleLastLetter = (ev) => {
+    setLastLetter(ev.target.value);
+    if (lastLetter === true) {
+      setLastLetter(ev.target.value)
+      }else{
+        setLastLetter ("")
+}}
+
+
+
 
   return (
     <div className="page">
@@ -50,6 +64,8 @@ function App() {
               type="text"
               name="last-letter"
               id="last-letter"
+              value={lastLetter}
+              onChange={handleLastLetter}
             />
           </form>
         </section>
